@@ -28,3 +28,30 @@ SET SQL_SAFE_UPDATES = 0;
 -- Re-enable safe mode (run after completing cleanup updates)
 SET SQL_SAFE_UPDATES = 1;
 ```
+
+## Table Structure & Column Management
+
+Add Columns
+```
+-- Add a single column
+ALTER TABLE your_table_name 
+ADD COLUMN column_name VARCHAR(50);
+
+-- Add multiple columns simultaneously
+ALTER TABLE your_table_name 
+ADD COLUMN first_name VARCHAR(50),
+ADD COLUMN last_name VARCHAR(50),
+ADD COLUMN hire_date DATE;
+```
+Remove Columns
+
+```
+ALTER TABLE your_table_name 
+DROP COLUMN column_name;
+```
+
+## Data Cleaning & Type Conversion
+
+A. Fixing Date Values (DD-MM-YYYY to DATE)
+
+If dates fail during import due to formatting, store them initially as text (```VARCHAR```) or clean existing text dates before converting to MySQL’s standard ```YYYY-MM-DD``` data type.
