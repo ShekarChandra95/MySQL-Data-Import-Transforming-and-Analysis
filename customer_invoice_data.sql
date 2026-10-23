@@ -1,0 +1,1 @@
+SELECT * FROM chandra.customer_invoice;
